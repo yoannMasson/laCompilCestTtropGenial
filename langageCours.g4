@@ -17,6 +17,6 @@ fragment
 VARIABLE : ('a'..'z')('a'..'z'|'0'..'9')*;
 
 affectation:
-VARIABLE '=' integer_number;
+VARIABLE '=' integer_number|boolean_type;
 
 WS : [ \t\r\n]+ -> skip ;

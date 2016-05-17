@@ -178,6 +178,9 @@ public class langageCoursParser extends Parser {
 		public Integer_numberContext integer_number() {
 			return getRuleContext(Integer_numberContext.class,0);
 		}
+		public Boolean_typeContext boolean_type() {
+			return getRuleContext(Boolean_typeContext.class,0);
+		}
 		public AffectationContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -196,14 +199,29 @@ public class langageCoursParser extends Parser {
 		AffectationContext _localctx = new AffectationContext(_ctx, getState());
 		enterRule(_localctx, 4, RULE_affectation);
 		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(13);
-			match(VARIABLE);
-			setState(14);
-			match(T__2);
-			setState(15);
-			integer_number();
+			setState(17);
+			switch (_input.LA(1)) {
+			case VARIABLE:
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(13);
+				match(VARIABLE);
+				setState(14);
+				match(T__2);
+				setState(15);
+				integer_number();
+				}
+				break;
+			case T__0:
+			case T__1:
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(16);
+				boolean_type();
+				}
+				break;
+			default:
+				throw new NoViableAltException(this);
 			}
 		}
 		catch (RecognitionException re) {
@@ -218,12 +236,12 @@ public class langageCoursParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\b\24\4\2\t\2\4\3"+
-		"\t\3\4\4\t\4\3\2\3\2\3\3\6\3\f\n\3\r\3\16\3\r\3\4\3\4\3\4\3\4\3\4\2\2"+
-		"\5\2\4\6\2\3\3\2\3\4\21\2\b\3\2\2\2\4\13\3\2\2\2\6\17\3\2\2\2\b\t\t\2"+
-		"\2\2\t\3\3\2\2\2\n\f\7\7\2\2\13\n\3\2\2\2\f\r\3\2\2\2\r\13\3\2\2\2\r\16"+
-		"\3\2\2\2\16\5\3\2\2\2\17\20\7\b\2\2\20\21\7\5\2\2\21\22\5\4\3\2\22\7\3"+
-		"\2\2\2\3\r";
+		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\b\26\4\2\t\2\4\3"+
+		"\t\3\4\4\t\4\3\2\3\2\3\3\6\3\f\n\3\r\3\16\3\r\3\4\3\4\3\4\3\4\5\4\24\n"+
+		"\4\3\4\2\2\5\2\4\6\2\3\3\2\3\4\24\2\b\3\2\2\2\4\13\3\2\2\2\6\23\3\2\2"+
+		"\2\b\t\t\2\2\2\t\3\3\2\2\2\n\f\7\7\2\2\13\n\3\2\2\2\f\r\3\2\2\2\r\13\3"+
+		"\2\2\2\r\16\3\2\2\2\16\5\3\2\2\2\17\20\7\b\2\2\20\21\7\5\2\2\21\24\5\4"+
+		"\3\2\22\24\5\2\2\2\23\17\3\2\2\2\23\22\3\2\2\2\24\7\3\2\2\2\4\r\23";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
