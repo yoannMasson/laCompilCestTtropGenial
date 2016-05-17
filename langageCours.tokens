@@ -1,0 +1,9 @@
+T__0=1
+T__1=2
+T__2=3
+WS=4
+DIGIT=5
+VARIABLE=6
+'true'=1
+'false'=2
+'='=3
